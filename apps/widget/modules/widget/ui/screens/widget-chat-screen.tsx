@@ -12,7 +12,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { api } from '@workspace/backend/_generated/api';
 import {
   AIConversation,
-  AIConversationContent,
+  AIConversationContent
 } from '@workspace/ui/components/ai/conversation';
 import {
   AIInput,
@@ -93,7 +93,7 @@ export const WidgetChatScreen = () => {
   });
 
   const createMessage = useAction(api.public.messages.create);
-  const onSumbit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     if (!conversation || !contactSessionId) return;
 
     form.reset();
@@ -118,7 +118,7 @@ export const WidgetChatScreen = () => {
           <MenuIcon />
         </Button>
       </WidgetHeader>
-      <AIConversation>
+      <AIConversation className="max-h-[calc(100vh-180px)]">
         <AIConversationContent>
           <InifiniteScrollTrigger
             canLoadMore={canLoadMore}
@@ -150,7 +150,7 @@ export const WidgetChatScreen = () => {
       {/* TODO: Add suggestions */}
       <Form {...form}>
         <AIInput
-          onSubmit={form.handleSubmit(onSumbit)}
+          onSubmit={form.handleSubmit(onSubmit)}
           className="rounded-none border-x-0 border-b-0"
         >
           <FormField
@@ -164,7 +164,7 @@ export const WidgetChatScreen = () => {
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
-                    form.handleSubmit(onSumbit)();
+                    form.handleSubmit(onSubmit)();
                   }
                 }}
                 placeholder={
