@@ -123,7 +123,7 @@ export const ConversationsPanel = () => {
                   key={conversation._id}
                   className={cn(
                     'relative flex cursor-pointer items-start gap-3 border-b p-4 py-5 text-sm leading-tight hover:bg-accent hover:text-accent-foreground',
-                    pathname === `/conversation/${conversation._id}` &&
+                    pathname === `/conversations/${conversation._id}` &&
                       'bg-accent text-accent-foreground'
                   )}
                   href={`/conversations/${conversation._id}`}
@@ -131,7 +131,7 @@ export const ConversationsPanel = () => {
                   <div
                     className={cn(
                       '-translate-y-1/2 absolute top-1/2 left-0 h-[64%] w-1 rounded-r-full bg-neutral-300 opacity-0 transition-opacity',
-                      pathname === `/conversation/${conversation._id}` &&
+                      pathname === `/conversations/${conversation._id}` &&
                         'opacity-100'
                     )}
                   />
