@@ -2,26 +2,26 @@
 
 import { OrganizationSwitcher, UserButton } from '@clerk/nextjs';
 import {
-    Sidebar,
-    SidebarContent,
-    SidebarFooter,
-    SidebarGroup,
-    SidebarGroupContent,
-    SidebarGroupLabel,
-    SidebarHeader,
-    SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
-    SidebarRail,
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarRail,
 } from '@workspace/ui/components/sidebar';
 import { cn } from '@workspace/ui/lib/utils';
 import {
-    CreditCardIcon,
-    InboxIcon,
-    LayoutDashboardIcon,
-    LibraryBigIcon,
-    MicIcon,
-    PaletteIcon,
+  CreditCardIcon,
+  InboxIcon,
+  LayoutDashboardIcon,
+  LibraryBigIcon,
+  MicIcon,
+  PaletteIcon,
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -51,7 +51,7 @@ const configurationItems = [
     icon: LayoutDashboardIcon,
   },
   {
-    title: 'Voice Assisatnt',
+    title: 'Voice Assistant',
     url: '/plugins/vapi',
     icon: MicIcon,
   },
